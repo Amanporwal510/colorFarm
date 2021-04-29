@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 7%;
+  height: 6vh;
 }
 
 .logo {
@@ -25,4 +25,9 @@
   width: 340px;
   margin: 0 10px;
   display: inline-block;
+}
+
+.FormatSelector {
+  margin-left: auto;
+  margin-right: 2rem;
 }
