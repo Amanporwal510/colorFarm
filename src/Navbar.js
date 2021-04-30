@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import FormatSelector from './Navbar-FormatSelector'
@@ -34,7 +35,7 @@ class Navbar extends Component {
         return (
             <header className='Navbar'>
                 <div className='logo'>
-                    <a href='/'>ColorFarm</a>
+                    <Link to='/'>ColorFarm</Link>
                 </div>
                 <div className='slider-container'>
                     <span>Level: {level}</span>
