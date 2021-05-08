@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import './ColorBox.css'
+import {Link} from 'react-router-dom'
+import { withStyles } from '@material-ui/core/styles';
+import styles from './styles/ColorBoxStyles'
+// import './ColorBox.css'
 
 class ColorBox extends Component {
     constructor(props) {
@@ -15,27 +18,33 @@ class ColorBox extends Component {
         })
     }
     render() {
-        const {background, name} = this.props
+        const {background, name, paletteId, colorId, showingFullPalette, classes} = this.props
         const {copied} = this.state
+        
         return (
             <CopyToClipboard text={background} onCopy={this.changeCopyState}>
-                <div style={{background}} className='ColorBox'>
-                    <div style={{background}} className={`copy-overlay ${copied && 'show'}`}></div>
-                    <div className={`copy-msg ${copied && 'show'}`}>
+                <div style={{background}} className={classes.ColorBox}>
+                    <div style={{background}} className={`${classes.copyOverlay} ${copied && classes.showOverlay}`}></div>
+                    <div className={`${classes.copyMessage} ${copied && classes.showCopyMeassge}`}>
                         <h3>Copied!!!</h3>
-                        <p>{background}</p>
+                        <p className={classes.copyText}>{background}</p>
                     </div>
-                    <div className='copy-container'>
-                        <div className='box-content'>
-                            <span>{name}</span>
+                    <div>
+                        <div className={classes.boxContent}>
+                            <span className={classes.colorName}>{name}</span>
                         </div>
-                        <button className='copy-button'>Copy</button>
+                        <button className={classes.copyButton} >Copy</button>
                     </div>
-                    <span className='see-more'>More</span>
+                {
+                    showingFullPalette &&
+                    <Link to={`/palette/${paletteId}/${colorId}`} onClick={e => e.stopPropagation}>
+                        <span className={classes.seeMore}>More</span>
+                    </Link>
+                }
                 </div>
             </CopyToClipboard>
         )
     }
 }
 
-export default ColorBox
+export default withStyles(styles)(ColorBox)

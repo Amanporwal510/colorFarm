@@ -4,7 +4,9 @@ import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import FormatSelector from './Navbar-FormatSelector'
 import Snackbar from './Snackbar'
-import './Navbar.css'
+import { withStyles } from '@material-ui/core/styles';
+import styles from './styles/NavbarStyles'
+// import './Navbar.css'
 
 
 class Navbar extends Component {
@@ -29,26 +31,28 @@ class Navbar extends Component {
         this.setState({snackbarOpen: false})
     }
     render() {
-        const {level, handleChangeLevel} = this.props
+        const {level, handleChangeLevel, showingAllColors, classes} = this.props
         const {format, snackbarOpen} = this.state
 
         return (
-            <header className='Navbar'>
-                <div className='logo'>
+            <header className={classes.Navbar}>
+                <div className={classes.logo}>
                     <Link to='/'>ColorFarm</Link>
                 </div>
-                <div className='slider-container'>
-                    <span>Level: {level}</span>
-                    <div className='slider'>
-                        <Slider defaultValue={level} 
-                            min={100} 
-                            max={900} 
-                            step={100} 
-                            onAfterChange={handleChangeLevel} 
-                        />
+                {   showingAllColors &&
+                    <div>
+                        <span>Level: {level}</span>
+                        <div className={classes.slider}>
+                            <Slider defaultValue={level} 
+                                min={100} 
+                                max={900} 
+                                step={100} 
+                                onAfterChange={handleChangeLevel} 
+                            />
+                        </div>
                     </div>
-                </div>
-                <div className='FormatSelector'>
+                }
+                <div className={classes.FormatSelector}>
                 <FormatSelector format={format} handleChange={this.handleChange}/>
                 </div>
                 <Snackbar open={snackbarOpen} handleClose={this.handleSnackbarClose} format={format} />
@@ -57,4 +61,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar
+export default withStyles(styles)(Navbar)

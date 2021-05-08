@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import Navbar from './Navbar'
 import ColorBox from './ColorBox'
-import './Palette.css'
+import PaletteFooter from './PaletteFooter'
+import { withStyles } from '@material-ui/core/styles';
+import styles from './styles/PaletteStyles'
+// import './Palette.css'
 
 class Palette extends Component {
     constructor(props) {
@@ -23,27 +26,37 @@ class Palette extends Component {
     render() {
 
         const {level, format} = this.state
-        const {colors, paletteName, emoji} = this.props.palette
+        const {colors, paletteName, id, emoji} = this.props.palette
+        const {classes} = this.props
 
 
         const colorBoxes = colors[level].map( color => (
-            <ColorBox background={color[format]} name={color.name} key={color.id} />
+            <ColorBox 
+                background={color[format]} 
+                name={color.name} 
+                key={color.id}
+                paletteId={id}
+                colorId={color.id}
+                showingFullPalette={true}
+            />
         ))
 
         return (
-            <div className='Palette'>
-                <Navbar level={level} handleChangeLevel={this.handleChangeLevel} changeFormat={this.changeFormat} />
-                <div className='Palette-colors'>
+            <div className={classes.Palette}>
+                <Navbar 
+                    level={level} 
+                    handleChangeLevel={this.handleChangeLevel} 
+                    changeFormat={this.changeFormat} 
+                    showingAllColors = {true}
+                />
+                <div className={classes.PaletteColors}>
                     {/* Bunch of color Boxes goes Here */}
                     {colorBoxes}
                 </div>
-                <footer className='palette-footer'>
-                    <div>{paletteName}</div>
-                    <span className='emoji'>{emoji}</span>
-                </footer>
+                <PaletteFooter paletteName={paletteName} emoji={emoji} />
             </div>
         )
     }
 }
 
-export default Palette
+export default withStyles(styles)(Palette)
