@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "38f498ca0e48d0b4d435",
+    "revision": "5880871fc5707bad2272",
     "url": "/colorFarm/static/css/main.a8130f8c.chunk.css"
   },
   {
-    "revision": "38f498ca0e48d0b4d435",
-    "url": "/colorFarm/static/js/main.1ef4aa22.chunk.js"
+    "revision": "5880871fc5707bad2272",
+    "url": "/colorFarm/static/js/main.ab485c65.chunk.js"
   },
   {
     "revision": "99a7f37ef14b4e347822",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/colorFarm/static/media/bg.ddf7fec2.svg"
   },
   {
-    "revision": "dc4c852ff7cec076231ce16ed48d8c5d",
+    "revision": "3ebf4972033da87bdeb469e6488a4234",
     "url": "/colorFarm/index.html"
   }
 ];
