@@ -3,9 +3,9 @@ import {Switch, Route} from 'react-router-dom'
 import Palette from './Palette'
 import PaletteList from './PaletteList'
 import seedColors from './seedColors'
-import generatePalette from './colorHelper'
 import SingleColorPalette from './SingleColorPalette'
 import NewPaletteForm from './NewPaletteForm'
+import generatePalette from './colorHelper'
 
 class App extends Component {
   constructor(props) {
@@ -49,11 +49,12 @@ class App extends Component {
   }
 
   render() {
+    const {palettes} = this.state
     return (
       <Switch>
         <Route exact path='/' render={(routeProps) => (
           <PaletteList 
-            palettes={this.state.palettes} 
+            palettes={palettes} 
             {...routeProps}
             deletePalette={this.deletePalette}
           />)} 
@@ -63,7 +64,7 @@ class App extends Component {
             <NewPaletteForm 
               savePalette={this.savePalette} 
               {...routeProps}
-              Palettes={this.state.palettes}
+              Palettes={palettes}
             />} 
         />
 
@@ -76,6 +77,13 @@ class App extends Component {
             palette={generatePalette(this.findPalette(routeProps.match.params.paletteId))}
             colorId={routeProps.match.params.colorId}
           />)}
+        />
+        <Route render={(routeProps) => (
+          <PaletteList 
+            palettes={palettes} 
+            {...routeProps}
+            deletePalette={this.deletePalette}
+          />)} 
         />
       </Switch>
     )

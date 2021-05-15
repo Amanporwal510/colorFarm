@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import {Button,
+        Dialog,
+        DialogActions, 
+        DialogContent, 
+        DialogContentText, 
+        DialogTitle } from '@material-ui/core'
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import 'emoji-mart/css/emoji-mart.css'
 import { Picker } from 'emoji-mart'
@@ -36,9 +36,7 @@ class PaletteMetaForm extends Component {
         })
     }
     setEmojiState() {
-        this.setState({
-            stage: "emoji"
-        })
+        this.setState({stage: "emoji"})
     }
     savePalette(emoji) {
         const newPalette = {
@@ -46,10 +44,11 @@ class PaletteMetaForm extends Component {
             emoji: emoji.native
         }
         this.props.handleSavePalette(newPalette)
+        this.setState({stage: "form"})
     }
 
     render() {
-        const {stage} = this.state
+        const {stage, newPaletteName} = this.state
         const {hideForm} = this.props
         return (
         <div>
@@ -83,7 +82,7 @@ class PaletteMetaForm extends Component {
                             name="newPaletteName"
                             fullWidth
                             margin="normal"
-                            value={this.state.newPaletteName}
+                            value={newPaletteName}
                             onChange={this.handleChange}
                             validators={['required', 'isPaletteNameUnique']}
                             errorMessages={['Enter Palette Name', 'Pallete name Must be Unique']}

@@ -9,7 +9,8 @@ export default {
         cursor: "pointer",
         "&:hover svg": {
             opacity: 1
-        }
+        },
+        boxSizing: 'content-box'
     },
     colors: {
         backgroundColor: "#dae1e4",

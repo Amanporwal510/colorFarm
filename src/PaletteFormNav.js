@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
-import PaletteMetaForm from './PaletteMetaForm'
 import classNames from 'classnames';
 import {Link} from 'react-router-dom'
-import { withStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
+import { withStyles } from '@material-ui/core/styles'
+import {CssBaseline, AppBar, Toolbar,
+            Typography, Button, IconButton} from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu';
-import Button from '@material-ui/core/Button'
+import PaletteMetaForm from './PaletteMetaForm'
 import styles from './styles/PaletteFormNavStyles'
 
 
@@ -36,7 +32,7 @@ class PaletteFormNav extends Component {
     }
 
     render() {
-        const {classes, open, Palettes, handleSavePalette} = this.props
+        const {classes, open, Palettes, handleSavePalette, handleDrawerOpen} = this.props
         const {formShowing} = this.state
         return (
             <div className={classes.root}>
@@ -52,7 +48,7 @@ class PaletteFormNav extends Component {
                         <IconButton
                             color="inherit"
                             aria-label="Open drawer"
-                            onClick={this.props.handleDrawerOpen}
+                            onClick={handleDrawerOpen}
                             className={classNames(classes.menuButton, open && classes.hide)}
                             >
                             <MenuIcon />

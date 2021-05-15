@@ -1,16 +1,13 @@
 import React, { Component } from 'react'
-import PaletteFormNav from './PaletteFormNav'
-import ColorPickerForm from './ColorPickerForm'
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
+import {Drawer, Typography, Divider, Button, IconButton} from '@material-ui/core'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import Button from '@material-ui/core/Button'
-import DraggableColorList from './DraggableColorList'
 import arrayMove from 'array-move'
+import DraggableColorList from './DraggableColorList'
+import PaletteFormNav from './PaletteFormNav'
+import ColorPickerForm from './ColorPickerForm'
+import seedColors from './seedColors'
 import styles from './styles/NewPaletteFormStyles'
 
 
@@ -22,7 +19,7 @@ class NewPaletteForm extends Component {
         super(props)
         this.state = {
             open: true,
-            colors: this.props.Palettes[0].colors
+            colors: seedColors[0].colors
         }
 
         this.addNewColor = this.addNewColor.bind(this)
@@ -73,8 +70,14 @@ class NewPaletteForm extends Component {
         })
     }
     addRandomColor() {
+        const {colors} = this.state
         const allColors = this.props.Palettes.map( palette => palette.colors).flat()
-        const randomColor = allColors[Math.floor(Math.random() * allColors.length)]
+        let randomColor = ""
+        let isDuplicate = true
+        do{
+            randomColor = allColors[Math.floor(Math.random() * allColors.length)]
+            isDuplicate = colors.some(color => color.name === randomColor.name)
+        }while(isDuplicate);
 
         this.setState({
             colors: [...this.state.colors, randomColor]
@@ -88,17 +91,17 @@ class NewPaletteForm extends Component {
 
 
     render() {
-        const { classes, maxLength } = this.props;
-        const { open } = this.state;
+        const { classes, maxLength, Palettes } = this.props;
+        const { open, colors } = this.state;
 
-        const paletteIsFull = this.state.colors.length >= maxLength
+        const paletteIsFull = colors.length >= maxLength
 
         return (
             <div className={classes.root}>
             <PaletteFormNav 
                 open={open} 
                 classes={classes} 
-                Palettes={this.props.Palettes}
+                Palettes={Palettes}
                 handleSavePalette={this.handleSavePalette}
                 handleDrawerOpen = {this.handleDrawerOpen}
             />
@@ -139,7 +142,7 @@ class NewPaletteForm extends Component {
                     <ColorPickerForm
                         paletteIsFull={paletteIsFull}
                         addNewColor={this.addNewColor}
-                        colors={this.state.colors}
+                        colors={colors}
                     />
                 </div>
             </Drawer>
@@ -152,10 +155,11 @@ class NewPaletteForm extends Component {
                 <div className={classes.drawerHeader} />
 
                 <DraggableColorList
-                    colors={this.state.colors}
+                    colors={colors}
                     removeColor={this.removeColor}
                     axis='xy'
                     onSortEnd={this.onSortEnd}
+                    distance={15}
                 />
                 
             </main>

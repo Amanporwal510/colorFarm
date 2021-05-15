@@ -131,5 +131,3 @@ export default {
         transitionDelay: "0.3s"
     }
 }
-
-console.log([sizes.down("sm")])

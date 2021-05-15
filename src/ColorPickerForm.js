@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import Button from '@material-ui/core/Button'
-import {ChromePicker} from 'react-color'
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import { withStyles } from '@material-ui/core/styles';
+import {ChromePicker} from 'react-color'
 import styles from './styles/ColorPickerFormStyles'
 
 class ColorPickerForm extends Component {
@@ -51,21 +51,22 @@ class ColorPickerForm extends Component {
 
     render() {
         const {paletteIsFull, classes} = this.props
+        const {newColorName, currentColor} = this.state
         return (
             <div>
                 <ChromePicker 
                 className={classes.picker}
-                    color={this.state.currentColor} 
+                    color={currentColor} 
                     onChangeComplete={this.updateCurrentColor}
                 />
-                <ValidatorForm onSubmit={this.handleSubmit}>
+                <ValidatorForm onSubmit={this.handleSubmit}  instantValidate={false} >
                     <TextValidator
                         className={classes.colorNameInput}
                         variant="filled"
                         margin="normal"
                         placeholder="Color Name"
                         name= "newColorName" 
-                        value={this.state.newColorName} 
+                        value={newColorName} 
                         onChange={this.handleChange} 
                         validators={['required', 'isColorNameUnique', 'isColorUnique']}
                         errorMessages={['Enter Color Name', 'Color name Must be Unique', 'Color already taken']}
@@ -75,7 +76,7 @@ class ColorPickerForm extends Component {
                         variant='contained' 
                         type='submit'
                         color='primary' 
-                        style={ paletteIsFull ? {} : {backgroundColor: this.state.currentColor}}
+                        style={ paletteIsFull ? {} : {backgroundColor: currentColor}}
                         disabled={paletteIsFull}
                     >{paletteIsFull ? "Palette Full" : "AddColor"}</Button>
                 </ValidatorForm>

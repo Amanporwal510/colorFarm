@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
+import { withStyles } from '@material-ui/core/styles'
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import FormatSelector from './Navbar-FormatSelector'
 import Snackbar from './Snackbar'
-import { withStyles } from '@material-ui/core/styles';
 import styles from './styles/NavbarStyles'
-// import './Navbar.css'
 
 
 class Navbar extends Component {
