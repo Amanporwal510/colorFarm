@@ -18,7 +18,7 @@ class NewPaletteForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            open: true,
+            open: false,
             colors: seedColors[0].colors
         }
 

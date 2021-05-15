@@ -22,8 +22,8 @@ export default {
             height: props => props.showingFullPalette ? "10%" : "20%",
         },
         [sizes.down("xs")]: {
-            width: "100%",
-            height: props => props.showingFullPalette ? "5%" : "10%",
+            width: "50%",
+            height: props => props.showingFullPalette ? "10%" : "10%",
         }
     },
     copyText: {
