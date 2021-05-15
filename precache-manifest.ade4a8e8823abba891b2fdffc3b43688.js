@@ -1,23 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "5880871fc5707bad2272",
+    "revision": "f6b70cde43e334462322",
     "url": "/colorFarm/static/css/main.a8130f8c.chunk.css"
   },
   {
-    "revision": "5880871fc5707bad2272",
-    "url": "/colorFarm/static/js/main.ab485c65.chunk.js"
+    "revision": "f6b70cde43e334462322",
+    "url": "/colorFarm/static/js/main.817a046b.chunk.js"
   },
   {
     "revision": "99a7f37ef14b4e347822",
     "url": "/colorFarm/static/js/runtime~main.0fe51c89.js"
   },
   {
-    "revision": "8af44312642b0c8a3e53",
+    "revision": "f2926dcd912119846bea",
     "url": "/colorFarm/static/css/2.96f07925.chunk.css"
   },
   {
-    "revision": "8af44312642b0c8a3e53",
-    "url": "/colorFarm/static/js/2.f91473bf.chunk.js"
+    "revision": "f2926dcd912119846bea",
+    "url": "/colorFarm/static/js/2.9966a797.chunk.js"
   },
   {
     "revision": "f8512115782175dce09b",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/colorFarm/static/media/bg.ddf7fec2.svg"
   },
   {
-    "revision": "3ebf4972033da87bdeb469e6488a4234",
+    "revision": "bc72a560efc5a514f66d9bf867d12dfb",
     "url": "/colorFarm/index.html"
   }
 ];
