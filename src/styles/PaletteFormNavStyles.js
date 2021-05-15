@@ -46,6 +46,12 @@ const styles = theme => ({
             margin: "0.1rem",
             padding: "0.2rem"
         }
+    },
+    heading: {
+        [sizes.down("xs")]: {
+            fontSize: "1rem",
+            marginLeft: "-1rem"
+        }
     }
 })
 
