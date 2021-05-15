@@ -1,4 +1,5 @@
 import chroma from 'chroma-js'
+import sizes from './sizes'
 export default {
     ColorBox: {
         width: "20%",
@@ -11,6 +12,18 @@ export default {
         "&:hover button": {
             opacity: "1",
             transition: "0.5s"
+        },
+        [sizes.down("lg")]: {
+            width: "25%",
+            height: props => props.showingFullPalette ? "20%" : "33.3333%",
+        },
+        [sizes.down("md")]: {
+            width: "50%",
+            height: props => props.showingFullPalette ? "10%" : "20%",
+        },
+        [sizes.down("xs")]: {
+            width: "100%",
+            height: props => props.showingFullPalette ? "5%" : "10%",
         }
     },
     copyText: {
@@ -26,16 +39,16 @@ export default {
         right: "0",
         bottom: "0",
         width: "60px",
-        height: "30px",
+        height: "25px",
         textAlign: "center",
-        lineHeight: "30px",
+        lineHeight: "25px",
         textTransform: "uppercase",
         borderRadius: "2px"
     },
     copyButton: {
         color: props => chroma(props.background).luminance() >=0.7 ? "rgba(0, 0, 0, 0.6)" : "white",
-        width: "100px",
-        height: "30px",
+        width: "80px",
+        height: "25px",
         display: "inline-block",
         position: "absolute",
         top: "50%",
@@ -47,7 +60,7 @@ export default {
         background: "rgba(255, 255, 255, 0.3)",
         textAlign: "center",
         fontSize: "1rem",
-        lineHeight: "30px",
+        lineHeight: "25px",
         textTransform: "uppercase",
         cursor: "pointer",
         textDecoration: "none",
@@ -101,6 +114,9 @@ export default {
             textAlign: "center",
             padding: "1rem",
             textTransform: "uppercase",
+            [sizes.down("xs")]: {
+                fontSize: "5rem"
+            }
         },
         "& p": {
             fontSize: "2rem",
@@ -115,3 +131,5 @@ export default {
         transitionDelay: "0.3s"
     }
 }
+
+console.log([sizes.down("sm")])
