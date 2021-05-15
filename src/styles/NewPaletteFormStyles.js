@@ -21,7 +21,7 @@ const styles = theme => ({
     width: "100%",
     padding: '0 8px',
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-end'
+    justifyContent: 'center',
   },
   content: {
     flexGrow: 1,
@@ -41,22 +41,34 @@ const styles = theme => ({
     marginLeft: 0,
   },
   container: {
-    width: "90%",
+    width: "80%",
     height: "100vh",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    overflow: "hidden",
-    [sizes.down("xs")]: {
-      width: "80%"
-    }
+    overflow: "hidden"
   },
   buttons: {
-    width: "100%"
+    width: "100%",
+    [sizes.down("xs")]: {
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginBottom: "1rem",
+    }
   },
   button: {
-      width: "50%"
+      width: "50%",
+      [sizes.down("xs")]: {
+        width: "45%",
+        fontSize: "1rem",
+        margin: "0.1rem"
+      }
+  },
+  heading: {
+    flexGrow: "1",
+    fontWeight: "bold"
   }
 })
 

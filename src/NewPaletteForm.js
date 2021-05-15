@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import {Drawer, Typography, Divider, Button, IconButton} from '@material-ui/core'
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import Close from '@material-ui/icons/Close';
 import arrayMove from 'array-move'
 import DraggableColorList from './DraggableColorList'
 import PaletteFormNav from './PaletteFormNav'
@@ -115,15 +115,16 @@ class NewPaletteForm extends Component {
                 }}
                 >
                 <div className={classes.drawerHeader}>
+                    <Typography className={classes.heading} variant="h5">
+                        Design Your Palette
+                    </Typography>
                     <IconButton onClick={this.handleDrawerClose}>
-                    <ChevronLeftIcon />
+                        {/* <ChevronLeftIcon /> */}
+                        <Close/>
                     </IconButton>
                 </div>
                 <Divider />
                 <div className={classes.container}>
-                    <Typography variant="h4" gutterBottom>
-                        Design Your Palette
-                    </Typography>
                     <div className={classes.buttons}>
                         <Button 
                             className={classes.button}
