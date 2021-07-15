@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# `ColorFarm`
+* It is a fully responsive react app inspired by Flat UI Colors and Material UI Colors.,
+where users can create, delete, view color palettes and Copy color Codes to their
+Clipboard in different formats like Hex, Rgb, rgba.
+* Other Features: Drag and Drop of color box, color-picker, Emoji-picker.
+* Techstack - React, Material-UI, JSS, react-router.
+* Deployed on Github-pages
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### [`Deployment Link`](https://amanporwal510.github.io/colorFarm/)
 
-## Available Scripts
+## `Homepage`
+<img width="960" alt="homepage" src="https://user-images.githubusercontent.com/56669314/125781239-68ca1082-5102-410a-9540-b7cd5c9f38e4.png">
 
-In the project directory, you can run:
+## `Add Color`
+<img width="960" alt="addColor" src="https://user-images.githubusercontent.com/56669314/125781153-bd11b6af-5297-4a79-9258-0b5168aadd60.png">
 
-### `npm start`
+## `Palette`
+<img width="960" alt="palette" src="https://user-images.githubusercontent.com/56669314/125781254-568e3511-23c3-426e-87d7-3b72314d25bf.png">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## `Color Palette`
+<img width="960" alt="colorPalette" src="https://user-images.githubusercontent.com/56669314/125781211-5db9d127-506d-4317-aa88-921aca1f6580.png">
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## `Copied`
+<img width="960" alt="copied" src="https://user-images.githubusercontent.com/56669314/125781226-61ec6424-41e9-4210-87df-7dd86ad3c241.png">
 
-### `npm test`
+## `Add Emoji`
+<img width="960" alt="addEmoji" src="https://user-images.githubusercontent.com/56669314/125781187-f580034d-4d66-4dcb-bf47-0b39dd45887e.png">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## `Add Palette Name`
+<img width="960" alt="AddPaletteName" src="https://user-images.githubusercontent.com/56669314/125781198-22b56401-8931-4e45-863e-2adea6917433.png">
