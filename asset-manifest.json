@@ -1,7 +1,7 @@
 {
   "main.css": "/colorFarm/static/css/main.a8130f8c.chunk.css",
-  "main.js": "/colorFarm/static/js/main.ae42989a.chunk.js",
-  "main.js.map": "/colorFarm/static/js/main.ae42989a.chunk.js.map",
+  "main.js": "/colorFarm/static/js/main.a1604c85.chunk.js",
+  "main.js.map": "/colorFarm/static/js/main.a1604c85.chunk.js.map",
   "runtime~main.js": "/colorFarm/static/js/runtime~main.85f4b2a0.js",
   "runtime~main.js.map": "/colorFarm/static/js/runtime~main.85f4b2a0.js.map",
   "static/css/2.96f07925.chunk.css": "/colorFarm/static/css/2.96f07925.chunk.css",
@@ -10,7 +10,7 @@
   "static/js/3.5fb692a8.chunk.js": "/colorFarm/static/js/3.5fb692a8.chunk.js",
   "static/js/3.5fb692a8.chunk.js.map": "/colorFarm/static/js/3.5fb692a8.chunk.js.map",
   "index.html": "/colorFarm/index.html",
-  "precache-manifest.4a46a9c72ded5f46f6e15c9bba30d6c7.js": "/colorFarm/precache-manifest.4a46a9c72ded5f46f6e15c9bba30d6c7.js",
+  "precache-manifest.1eed78472875a5a3f1ef0847c66e2564.js": "/colorFarm/precache-manifest.1eed78472875a5a3f1ef0847c66e2564.js",
   "service-worker.js": "/colorFarm/service-worker.js",
   "static/css/2.96f07925.chunk.css.map": "/colorFarm/static/css/2.96f07925.chunk.css.map",
   "static/css/main.a8130f8c.chunk.css.map": "/colorFarm/static/css/main.a8130f8c.chunk.css.map",
